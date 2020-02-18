@@ -13,7 +13,6 @@ def list_instances(project):
     instances=[]
 
     if project:
-    
         filters = [{'Name':'tag:project', 'Values':[project]}]
         instances = ec2.instances.filter(Filters=filters)
     else:
