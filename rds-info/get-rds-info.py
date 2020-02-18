@@ -2,7 +2,7 @@ import boto3
 import click
 
 session = boto3.Session(profile_name='default')
-rds = session.resource('rds')
+rds = boto3.client('rds')
 
 @click.command()
 def describe_db_instances():
