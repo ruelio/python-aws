@@ -25,7 +25,7 @@ def list_instances(project):
             i.placement['AvailabilityZone'],
             i.state['Name'],
             i.public_dns_name,
-            tags.get('Project', '<no project>')
+            tags.get('project', '<no project>')
             )))
 
     return
