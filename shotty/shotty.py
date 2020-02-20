@@ -7,7 +7,6 @@ ec2 = session.resource('ec2')
 @click.command()
 @click.option('--project', default=None,
     help="Only instances for project (tag Project:<name>)")
-
 def list_instances(project):
     "List EC2 instances"
     instances=[]
