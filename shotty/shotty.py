@@ -18,12 +18,15 @@ def list_instances(project):
         instances = ec2.instances.all()
 
     for i in instances:
-           print (', '.join((
-               i.id,
-               i.instance_type,
-               i.placement['AvailabilityZone'],
-               i.state['Name'],
-               i.public_dns_name)))
+        tags = { t['Key']: t['Value'] for t in i.tags or [] }
+        print (', '.join((
+            i.id,
+            i.instance_type,
+            i.placement['AvailabilityZone'],
+            i.state['Name'],
+            i.public_dns_name,
+            tags.get('Project', '<no project>')
+            )))
 
     return
 
