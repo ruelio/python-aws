@@ -85,7 +85,7 @@ def create_snapshot(project):
         print("Stopping {0}...".format(i.id))
 
         i.stop()
-        i.wait_until_stopped_all()
+        i.wait_until_stopped()
         
         for v in i.volumes.all():
             print("Creating snapshot of {0}".format(v.id))
@@ -97,7 +97,7 @@ def create_snapshot(project):
         i.wait_until_running()
     
     print("Job's done!")
-    
+
     return
     
 @instances.command('list')
