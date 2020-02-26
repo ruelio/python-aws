@@ -1,5 +1,5 @@
 # python-aws
-Project to access and manage AWS with Python
+Project to access and manage AWS with Python code
 
 ## About
 
